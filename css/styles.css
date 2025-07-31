@@ -1,6 +1,6 @@
 :root {
     --primary: #2e8b57;
-    --secondary: #3cb371:
+    --secondary: #3cb371;
 }
 
 body {
@@ -9,6 +9,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
 }
 
 
@@ -37,19 +45,72 @@ body {
     background: var(--secondary);
 }  
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.main-nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary);
+}
+
 @media (max-width: 768px) {
-    .program {
-        margin: 10px 0;
+    .menu-toggle {
+        display: block; /* Показываем кнопку */
     }
     
-    .main-menu {
-        flex-direction: column;
+    .main-nav {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        padding: 20px 0;
     }
-
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .main-nav a {
+        color: white;
+        display: block;
+        padding: 10px 20px;
+    }
+    
     .trainers-grid {
         grid-template-columns: 1fr;
     }
 }
+
+
 
 .trainers-grid {
     display: grid;
@@ -92,3 +153,4 @@ body {
     color: #666;
     margin: 10px 0;
 }
+
