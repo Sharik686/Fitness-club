@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши Тренеры</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+         <img src="" alt="logo">
+         <nav class="main-menu">
+             <a href="index.html" class="menu-items">Программы</a>
+             <a href="trainers.html" class="menu-item active">Тренеры</a>
+             <a href="#contacts" class="menu-item">Контакты</a>
+        </nav>
+    </header>
+    <main class="main-content">
+        <h1>Наша команда</h1>
+
+        <section class="trainers-grid">
+            <article class="trainers-card">
+                <img src="" alt="Тренер Алексей Петров" width="300" height="300">
+                <h2>Алексей Петров</h2>
+                <p class="specialty">Силовые тренировки, кардио</p>
+                <p class="experience">Опыт : 8 лет</p>
+                <button class="button">Записаться</button>
+            </article>
+
+            <article class="trainers-card">
+                <img src="" alt="Тренер Екатерина Викторовна" width="300" height="300">
+                <h2>Екатерина Викторовна</h2>
+                <p class="specialty">Кардио, Детский фитнес, Йога</p>
+                <p class="experience">Опыт : 6 лет</p>
+                <button class="button">Записаться</button>
+            </article>
+
+            <article class="trainers-card">
+                <img src="" alt="Тренер Сергей Викторович">
+                <h2>Сергей Викторович</h2>
+                <p class="specialty">Силовые тренировки, Детский фитнес, Кардио</p>
+                <p class="experience">Опыт : 7 лет</p>
+                <button class="button">Записаться</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p> 2025 Фитнес-клуб. Все права защищены.</p>
+    </footer>
+          <script>
+          document.querySelectorAll('.trainers-card .button').forEach(button => {
+            button.addEventListener('click',() => {
+                const trainerName = button.closest('.trainers-card').querySelector('h2').textContent;
+                alert(`Вы записываетесь к тренеру ${trainerName}! Скоро мы с вами свяжемся.`);
+            })
+        })
+    </script>
+    
+</body>
+</html>
